@@ -38,3 +38,6 @@
 <div class="chatmsg"><b>sfgfgdfg</b>: dfgdgg<br/></div>
 <div class="chatmsg"><b>Chater</b>: Kas chat korras?<br/></div>
 <div class="chatmsg"><b>Chater</b>: Vist jah<br/></div>
+<div class="chatmsg"><b>Ruzigg</b>: Test<br/></div>
+<div class="chatmsg"><b>Ruzigg</b>: 1,2,3<br/></div>
+<div class="chatmsg"><b>Ruzigg</b>: Töötab vist<br/></div>

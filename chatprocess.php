@@ -2,7 +2,6 @@
 //Stream Event
 header('Content-Type: text/event-stream');
 header('Cache-Control: no-cache');
-
 $name=strip_tags($_GET['name']);
 $msg=strip_tags($_GET['msg']);
 //Sonumite saatmiseks
@@ -16,7 +15,6 @@ if(!empty($name) && !empty($msg)){
     fwrite($fp, '<div class="chatmsg"><b>'.$name.'</b>: '.$msg.'<br/></div>'.PHP_EOL);  
     fclose($fp);  
 }
-
   if(file_exists("chat.txt") && filesize("chat.txt") > 0){  
    $arrhtml=array_reverse(file("chat.txt"));
    $html=$arrhtml[0];
@@ -26,5 +24,4 @@ if(!empty($name) && !empty($msg)){
     unlink("chat.txt");
   }
   
-
 sendMsg($html);

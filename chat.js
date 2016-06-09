@@ -6,6 +6,8 @@ var ChatEngine=function(){
      var sevr=" ";
      var xhr=" ";
 	 
+	 var cache = window.applicationCache;
+	 
      this.init=function(){
           if(EventSource){
           this.setName();
@@ -16,9 +18,9 @@ var ChatEngine=function(){
      };
      //Kasutajanime loomiseks
      this.setName=function(){
-          name = prompt("Enter your name:","Chater");
+          name = prompt("Enter your name:","Anonymous");
           if (!name || name ==="") {
-             name = "Chater";  
+             name = "Anonymous";  
           }
           name = name.replace(/(<([^>]+)>)/ig,"");
      };
@@ -48,6 +50,26 @@ var ChatEngine=function(){
           };
           xhr.send();
      };
+	 
+	 // Check the internet connection	
+		function connection(){
+			if (navigator.onLine == true) { 
+			console.log("Connected");
+		} else {
+			console.log("Not connected");			
+
+		}
+		
+	}
+
+	  function cacheListener(){
+			window.applicationCache.addEventListener('cached',function(){
+				window.applicationCache.swapCache();
+				console.log('cached');
+				},false);
+		}
+		cacheListener();
+	 
      this.initSevr=function(){
           sevr = new EventSource('chatprocess.php');
           sevr.onmessage = function(e){ 

@@ -1,0 +1,9 @@
+CACHE MANIFEST
+# version 6
+
+CACHE:
+index.html
+chat.js
+
+NETWORK:
+*
